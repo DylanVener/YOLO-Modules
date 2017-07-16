@@ -1,6 +1,7 @@
 import torch
+import os
 from torch.autograd import Variable
-from torch.utils import Dataset, DataLoader
+from torch.utils.data.dataset import Dataset
 import json
 
 class ImdbDataset(Dataset):

@@ -4,8 +4,10 @@ import torch.nn.functional as F
 
 class Sex(nn.Module):
     def __init__(self):
+        super(Sex, self).__init__()
+
         self.relu = nn.LeakyReLU(0.1)
-        
+
         self.fc1 = nn.Linear(1024, 1024)
         self.fc2 = nn.Linear(1024, 1000)
         self.fc3 = nn.Linear(1000,2)

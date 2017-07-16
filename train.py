@@ -1,14 +1,15 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
+from torch.utils.data import DataLoader
 from torch.autograd import Variable
 from tqdm import tqdm
 
 from models import Sex
 from data import ImdbDataset
 
-dataset = ImdbDataset()
-loader = torch.utils.DataLoader(dataset, batch_size = 4, shuffle=True, num_workers = 2, pin_memory = True)
+dataset = ImdbDataset('./current_ftg.json','')
+loader = DataLoader(dataset, batch_size = 4, shuffle=True, num_workers = 2, pin_memory = True)
 
 model = Sex().cuda()
 
