@@ -19,15 +19,15 @@ optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 epoch = tqdm(enumerate(loader))
 
 for cnt, data in epoch:
-    X, y = data
-    X, y = Variable(X.cuda()), Variable(y.cuda())
+    X, label = data['X'], data['label']
+    X, label = Variable(X.cuda()), Variable(label.cuda())
 
     optimizer.zero_grad()
 
     output = model(X)
-    loss = criterion(output, y)
+    loss = criterion(output, label)
     optimizer.step()
     
     if cnt % 1000 == 999:
-        print(loss.data)
+        epoch.write(loss.data)
 
