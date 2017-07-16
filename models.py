@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-def Sex(nn.Module):
+class Sex(nn.Module):
     def __init__(self):
         self.relu = nn.LeakyReLU(0.1)
         

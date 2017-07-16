@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 from tqdm import tqdm
 
-from models imprt Sex
+from models import Sex
 from data import ImdbDataset
 
 dataset = ImdbDataset()
